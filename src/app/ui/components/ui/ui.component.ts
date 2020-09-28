@@ -6,13 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ui.component.scss']
 })
 export class UiComponent implements OnInit {
-  public title: string;
   public menuIsOpen: boolean;
 
   constructor() { }
 
   ngOnInit(): void {
-    this.title = 'yolo';
     this.menuIsOpen = false;
   }
 
