@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Order } from 'src/app/shared/models/order/order';
+import { StateOrder } from '../../enum/state-order.enum';
 import { OrdersService } from '../../service/orders.service';
 
 @Component({
@@ -10,6 +11,7 @@ import { OrdersService } from '../../service/orders.service';
 export class PageListOrderComponent implements OnInit {
   public orderList: Order[];
   public tHeaders: string[];
+  public states = Object.values(StateOrder);
 
   constructor(private orderService: OrdersService) { }
 
@@ -31,6 +33,14 @@ export class PageListOrderComponent implements OnInit {
       'Total TTC',
       'State'
     ];
+  }
+
+  changeState(item: Order, event): void {
+    this.orderService.changeState(item, event.target.value).subscribe(
+      (result) => {
+        item.state = result.state;
+      }
+    );
   }
 
 }

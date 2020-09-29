@@ -1,5 +1,5 @@
 export enum StateOrder {
-  CANCEL = 'Cancel',
-  INPROGRESS = 'In progress',
-  CONFIRM = 'Confirm'
+  OPTION = 'OPTION',
+  INPROGRESS = 'IN PROGRESS',
+  CONFIRM = 'CONFIRMED'
 }

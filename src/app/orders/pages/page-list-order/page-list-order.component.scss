@@ -1,0 +1,13 @@
+@import 'theme';
+
+.state-option {
+  background-color: $color1;
+}
+
+.state-confirmed {
+  background-color: $color-success;
+}
+
+.state-in-progress {
+  background-color: $color-error;
+}
