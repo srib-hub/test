@@ -9,6 +9,7 @@ import { OrdersService } from '../../service/orders.service';
 })
 export class PageListOrderComponent implements OnInit {
   public orderList: Order[];
+  public tHeaders: string[];
 
   constructor(private orderService: OrdersService) { }
 
@@ -21,6 +22,15 @@ export class PageListOrderComponent implements OnInit {
         console.log(error);
       }
     );
+    this.tHeaders = [
+      'Type',
+      'Client',
+      'Nb. jours',
+      'Tjm HT',
+      'Total HT',
+      'Total TTC',
+      'State'
+    ];
   }
 
 }
