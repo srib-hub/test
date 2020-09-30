@@ -1,1 +1,13 @@
-<p>page-list-client works!</p>
+<app-table-light [headers]="tHeaders" *ngIf="clientList">
+  <tr *ngFor="let client of clientList" [ngClass]="{'selected': client.id==selectedId}">
+    <td>{{client.name}}</td>
+    <td>{{client.ca | currency: 'EUR'}}</td>
+    <td appState [state]="client.state">
+      <select (change)="changeState(client, $event)">
+        <option *ngFor="let s of states" [value]="s" [selected]="s === client.state">{{s}}</option>
+      </select>
+    </td>
+    <td>{{client.comment}}</td>
+  </tr>
+</app-table-light>
+<div *ngIf="!clientList">Chargement des données</div>

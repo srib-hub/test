@@ -1,0 +1,13 @@
+@import 'theme';
+
+.state-active {
+  background-color: $color-success;
+}
+
+.state-inactive {
+  background-color: $color-error;
+}
+
+.selected {
+  background-color: purple;
+}

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Order } from 'src/app/shared/models/order/order';
+import { Order } from 'src/app/core/models/order/order';
 import { StateOrder } from '../../enum/state-order.enum';
 import { OrdersService } from '../../service/orders.service';
 
@@ -24,6 +24,7 @@ export class PageListOrderComponent implements OnInit {
         console.log(error);
       }
     );
+
     this.tHeaders = [
       'Type',
       'Client',
@@ -39,8 +40,13 @@ export class PageListOrderComponent implements OnInit {
     this.orderService.changeState(item, event.target.value).subscribe(
       (result) => {
         item.state = result.state;
+      }, (err) => {
+        event.target.value = item.state;
       }
     );
   }
 
+  public doHello(): void {
+    console.log('Bonjour o/');
+  }
 }

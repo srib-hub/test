@@ -1,14 +1,15 @@
 {
   "orders": [
     {
-      "nbJours": 1,
+      "nbJours": 3,
       "state": "OPTION",
-      "tjmHt": 1200,
+      "tjmHt": 200,
       "tva": 20,
-      "typePresta": "formation55",
-      "client": "M2i",
-      "comment": "merci m2i",
-      "id": 1
+      "typePresta": "Formation",
+      "client": "Christophe2",
+      "comment": "aeofpbeogvb",
+      "id": 1,
+      "id_client": 1
     },
     {
       "nbJours": 1,
@@ -18,7 +19,8 @@
       "typePresta": "Formation",
       "client": "nemesys",
       "comment": "fssdgh",
-      "id": 3
+      "id": 3,
+      "id_client": 2
     },
     {
       "nbJours": 5,
@@ -28,7 +30,8 @@
       "typePresta": "Formation",
       "client": "Atos",
       "comment": "Comment pour Atos",
-      "id": 4
+      "id": 4,
+      "id_client": 1
     }
   ],
   "clients": [

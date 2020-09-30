@@ -1,7 +1,7 @@
 <app-table-light [headers]="tHeaders" *ngIf="orderList">
   <tr *ngFor="let order of orderList">
     <td>{{order.typePresta}}</td>
-    <td>{{order.client}}</td>
+    <td><a routerLink="/clients/{{order.id_client}}">{{order.client}}</a></td>
     <td>{{order.nbJours}}</td>
     <td>{{order.tjmHt}}</td>
     <td>{{order | total | currency: 'EUR'}}</td>
@@ -13,4 +13,7 @@
     </td>
   </tr>
 </app-table-light>
+<app-btn label="Google" href="https://www.google.fr"></app-btn>
+<app-btn label="Clients" route="/clients"></app-btn>
+<app-btn label="Dire bonjour" [action]="true" (clicked)="doHello()"></app-btn>
 <div *ngIf="!orderList">Chargement des données</div>

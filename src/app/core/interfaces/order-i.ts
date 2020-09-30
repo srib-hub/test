@@ -11,6 +11,7 @@ export interface OrderI {
   client: string;
   comment: string;
   id: number;
+  id_client: number;
   totalHt(): number;
   totalTtc(): number;
 }

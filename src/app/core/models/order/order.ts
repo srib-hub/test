@@ -10,6 +10,7 @@ export class Order implements OrderI {
   client: string;
   comment: string;
   id: number;
+  id_client: number;
 
   constructor(obj?: Partial<Order>) {
     if(obj) {
