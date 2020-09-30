@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Order } from 'src/app/core/models/order/order';
 import { StateOrder } from '../../enum/state-order.enum';
 import { OrdersService } from '../../service/orders.service';
@@ -9,21 +10,24 @@ import { OrdersService } from '../../service/orders.service';
   styleUrls: ['./page-list-order.component.scss']
 })
 export class PageListOrderComponent implements OnInit {
-  public orderList: Order[];
+  public collectionOrder$: Observable<Order[]>;
+  // public orderList: Order[];
   public tHeaders: string[];
   public states = Object.values(StateOrder);
 
   constructor(private orderService: OrdersService) { }
 
   ngOnInit(): void {
-    this.orderService.collection.subscribe(
+    /*this.orderService.collection.subscribe(
       (data) => {
         this.orderList = data;
       },
       (error) => {
         console.log(error);
       }
-    );
+    );*/
+
+    this.collectionOrder$ = this.orderService.collection;
 
     this.tHeaders = [
       'Type',

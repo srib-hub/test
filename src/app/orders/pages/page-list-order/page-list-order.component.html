@@ -1,4 +1,4 @@
-<app-table-light [headers]="tHeaders" *ngIf="orderList">
+<app-table-light [headers]="tHeaders" *ngIf="collectionOrder$ | async as orderList">
   <tr *ngFor="let order of orderList">
     <td>{{order.typePresta}}</td>
     <td><a routerLink="/clients/{{order.id_client}}">{{order.client}}</a></td>
@@ -16,4 +16,4 @@
 <app-btn label="Google" href="https://www.google.fr"></app-btn>
 <app-btn label="Clients" route="/clients"></app-btn>
 <app-btn label="Dire bonjour" [action]="true" (clicked)="doHello()"></app-btn>
-<div *ngIf="!orderList">Chargement des données</div>
+<!--<div *ngIf="!orderList">Chargement des données</div>-->
